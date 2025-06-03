@@ -1,4 +1,4 @@
-name: Build Project
+name: Create Artifact
 
 on: [push]
 
@@ -9,9 +9,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Create File
-      run: echo "This is a test artifact file" > output.txt
+      run: echo "This is my artifact file" > artifact.txt
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: sample-artifact
-        path: output.txt
+        name: my-artifact
+        path: artifact.txt
+
